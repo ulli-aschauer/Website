@@ -128,11 +128,11 @@ a { color: inherit; }
   position: absolute;
   z-index: 1;
   left: 50%;
-  top: 14%;
-  width: 14%;
+  top: 16%;
+  width: 15%;
   aspect-ratio: 1 / 1;
   transform: translate(-50%, -50%);
-  border-radius: 50%;
+  border-radius: 10px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.65);
 }
 .hero-name {
