@@ -127,8 +127,8 @@ a { color: inherit; }
 .hero-logo {
   position: absolute;
   z-index: 1;
-  left: 50%;
-  top: 18%;
+  left: 51%;
+  top: 27%;
   width: 15%;
   aspect-ratio: 1 / 1;
   transform: translate(-50%, -50%);
@@ -256,6 +256,7 @@ h3 { margin: 0 0 10px; font-size: 1.15rem; }
 .fact-list span { color: var(--muted); font-size: 0.86rem; }
 .fact-list strong { margin-top: 4px; font-size: 1.1rem; }
 .info-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.people-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
 .info-card p { margin-bottom: 0; color: var(--muted); }
 .table-wrap { overflow-x: auto; border: 1px solid var(--line); background: var(--panel); }
 table { width: 100%; min-width: 600px; border-collapse: collapse; }
