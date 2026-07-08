@@ -142,7 +142,7 @@ a { color: inherit; }
   letter-spacing: 0;
   text-transform: uppercase;
   text-align: center;
-  -webkit-text-stroke: 2px var(--red);
+  -webkit-text-stroke: 2px var(--red-dark);
   paint-order: stroke fill;
 }
 .hero-content {
