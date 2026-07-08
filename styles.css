@@ -24,6 +24,18 @@ body {
 body.nav-open { overflow: hidden; }
 a { color: inherit; }
 
+.construction-banner {
+  margin: 0;
+  padding: 10px 16px;
+  background: var(--red);
+  color: var(--white);
+  text-align: center;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.85rem;
+}
+
 .site-header {
   position: sticky;
   top: 0;
