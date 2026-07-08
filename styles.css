@@ -257,6 +257,9 @@ h3 { margin: 0 0 10px; font-size: 1.15rem; }
 .fact-list strong { margin-top: 4px; font-size: 1.1rem; }
 .info-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
 .people-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+.position-group { margin-top: 32px; }
+.position-group:first-of-type { margin-top: 24px; }
+.position-group .photo-strip { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); margin-top: 12px; }
 .info-card p { margin-bottom: 0; color: var(--muted); }
 .table-wrap { overflow-x: auto; border: 1px solid var(--line); background: var(--panel); }
 table { width: 100%; min-width: 600px; border-collapse: collapse; }
