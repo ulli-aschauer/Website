@@ -102,37 +102,55 @@ a { color: inherit; }
 .section-band, .content-section { padding: clamp(56px, 8vw, 96px) clamp(18px, 4vw, 44px); }
 
 .hero {
-  position: relative;
-  display: grid;
-  align-items: end;
-  min-height: calc(100vh - 76px);
+  padding-block: clamp(28px, 5vw, 56px);
+  background: var(--bg);
   border-bottom: 1px solid var(--line);
-  overflow: hidden;
 }
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, rgba(3, 4, 6, 0.98) 0%, rgba(3, 4, 6, 0.78) 38%, rgba(3, 4, 6, 0.34) 68%, rgba(3, 4, 6, 0.18) 100%), linear-gradient(0deg, rgba(3, 4, 6, 0.9), rgba(3, 4, 6, 0.08) 52%);
-  pointer-events: none;
+.hero-frame {
+  position: relative;
+  width: min(100%, 640px);
+  aspect-ratio: 3 / 4;
+  margin-inline: auto;
+  overflow: hidden;
+  border: 1px solid var(--line);
 }
 .hero-photo {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
   background-image: url("assets/team-hero.jpg");
   background-size: cover;
-  background-position: center 60%;
+  background-position: center;
+}
+.hero-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(3, 4, 6, 0.92) 0%, rgba(3, 4, 6, 0.55) 20%, rgba(3, 4, 6, 0) 42%);
+  pointer-events: none;
+}
+.hero-name {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 0 20px 22px;
+  color: var(--white);
+  font-size: clamp(2.1rem, 9vw, 3.4rem);
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  text-align: center;
+  -webkit-text-stroke: 2px var(--red);
+  paint-order: stroke fill;
 }
 .hero-content {
-  position: relative;
-  z-index: 1;
   width: 100%;
-  max-width: var(--max);
+  max-width: 640px;
   margin-inline: auto;
-  padding-block: clamp(110px, 16vw, 180px) clamp(58px, 9vw, 110px);
+  padding-inline: clamp(18px, 4vw, 44px);
+  text-align: center;
 }
 .content-section > * { max-width: var(--max); margin-inline: auto; }
 
@@ -262,7 +280,6 @@ tr.highlight td { background: rgba(240, 20, 54, 0.24); font-weight: 900; }
 .site-footer a:hover, .site-footer a:focus-visible { color: var(--white); }
 
 @media (max-width: 860px) {
-  .hero-photo { background-position: center bottom; }
   .nav-toggle { display: block; }
   .main-nav {
     position: fixed;
@@ -276,7 +293,6 @@ tr.highlight td { background: rgba(240, 20, 54, 0.24); font-weight: 900; }
   }
   body.nav-open .main-nav { display: flex; }
   .main-nav a { padding: 14px; }
-  .hero { min-height: auto; }
   .split-layout, .league-layout { grid-template-columns: 1fr; }
   .info-grid, .link-grid, .photo-strip { grid-template-columns: 1fr; }
   .site-footer { flex-direction: column; }
