@@ -17,3 +17,26 @@ navLinks.forEach((link) => {
     navToggle?.setAttribute('aria-expanded', 'false');
   });
 });
+
+const standingsBody = document.querySelector('#standings-body');
+
+if (standingsBody) {
+  fetch('data/standings.json')
+    .then((response) => (response.ok ? response.json() : Promise.reject(response.status)))
+    .then((data) => {
+      const rows = Array.isArray(data.rows) ? data.rows : [];
+      if (!rows.length) return;
+      standingsBody.innerHTML = rows
+        .map((row) => {
+          const isOwnTeam = row.team === data.team;
+          const cells = [row.rank, row.team, row.played, row.wins, row.losses, row.points]
+            .map((value) => `<td>${value ?? '-'}</td>`)
+            .join('');
+          return `<tr${isOwnTeam ? ' class="highlight"' : ''}>${cells}</tr>`;
+        })
+        .join('');
+    })
+    .catch(() => {
+      // Bei Fehler bleibt die statisch im HTML hinterlegte Tabelle sichtbar.
+    });
+}
