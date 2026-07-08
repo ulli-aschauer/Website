@@ -40,3 +40,33 @@ if (standingsBody) {
       // Bei Fehler bleibt die statisch im HTML hinterlegte Tabelle sichtbar.
     });
 }
+
+const nextMatchday = document.querySelector('#next-matchday');
+
+if (nextMatchday) {
+  fetch('data/next-matchday.json')
+    .then((response) => (response.ok ? response.json() : Promise.reject(response.status)))
+    .then((data) => {
+      const dateField = nextMatchday.querySelector('[data-field="date"]');
+      const opponentField = nextMatchday.querySelector('[data-field="opponent"]');
+      const locationField = nextMatchday.querySelector('[data-field="location"]');
+
+      if (dateField) {
+        dateField.textContent = data.date
+          ? `${data.date}${data.time ? `, ${data.time} Uhr` : ''}`
+          : 'Steht noch nicht fest';
+      }
+      if (opponentField) {
+        const awayHome = data.homeOrAway === 'heim' ? 'Heimspiel' : data.homeOrAway === 'auswaerts' ? 'Auswaertsspiel' : '';
+        opponentField.textContent = data.opponent
+          ? `${data.opponent}${awayHome ? ` (${awayHome})` : ''}`
+          : 'Steht noch nicht fest';
+      }
+      if (locationField) {
+        locationField.textContent = data.location || 'Steht noch nicht fest';
+      }
+    })
+    .catch(() => {
+      // Bei Fehler bleiben die "Wird geladen..."-Platzhalter sichtbar.
+    });
+}
