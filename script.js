@@ -57,7 +57,7 @@ if (nextMatchday) {
           : 'Steht noch nicht fest';
       }
       if (opponentField) {
-        const awayHome = data.homeOrAway === 'heim' ? 'Heimspiel' : data.homeOrAway === 'auswaerts' ? 'Auswaertsspiel' : '';
+        const awayHome = data.homeOrAway === 'heim' ? 'Heimspiel' : data.homeOrAway === 'auswärts' ? 'Auswärtsspiel' : '';
         opponentField.textContent = data.opponent
           ? `${data.opponent}${awayHome ? ` (${awayHome})` : ''}`
           : 'Steht noch nicht fest';

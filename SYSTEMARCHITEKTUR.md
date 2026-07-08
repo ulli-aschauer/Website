@@ -5,13 +5,13 @@ Datum: 2026-07-07
 
 ## Ziel
 
-Eine schlanke, DSGVO-bewusste Website fuer die Black Wolves Volleyballmannschaft aus Salzburg. Die Seite startet statisch, funktioniert ohne eigene Fotos und kann spaeter um Fotos, News, Spielberichte und eine automatisch aktualisierte Landesliga-Tabelle erweitert werden.
+Eine schlanke, DSGVO-bewusste Website für die Black Wolves Volleyballmannschaft aus Salzburg. Die Seite startet statisch, funktioniert ohne eigene Fotos und kann später um Fotos, News, Spielberichte und eine automatisch aktualisierte Landesliga-Tabelle erweitert werden.
 
 ## Entscheidungen
 
 - Website-Typ: statische Website
 - Hosting-Ziel: GitHub Pages
-- Domain: spaeter, bevorzugt `.at`, alternativ `.com`
+- Domain: später, bevorzugt `.at`, alternativ `.com`
 - Repository-Name: voraussichtlich `blackwolves`
 - Vereinsfarben: Schwarz und Rot
 - Sektion: Herren Landesliga
@@ -31,7 +31,7 @@ GitHub Repository
       v
 Kostenloses Hosting bei GitHub
       |
-      | Custom Domain spaeter
+      | Custom Domain später
       v
 .at oder .com Domain
 ```
@@ -44,27 +44,27 @@ Kostenloses Hosting bei GitHub
 - Landesliga
 - Links
 - Kontakt
-- Impressum und Datenschutz spaeter
+- Impressum und Datenschutz später
 
 ## Landesliga-Daten
 
-Zum Start zeigt die Website einen Platzhalter fuer die Tabelle und einen offiziellen Link zu OeVV/Volleynet. Spaeter kann die Tabelle automatisch aus einer offiziellen SVV-/OeVV-Quelle uebernommen werden.
+Zum Start zeigt die Website einen Platzhalter für die Tabelle und einen offiziellen Link zu OeVV/Volleynet. Später kann die Tabelle automatisch aus einer offiziellen SVV-/OeVV-Quelle übernommen werden.
 
 Bevorzugter technischer Weg:
 
 1. Ein kleines Script holt die Daten.
 2. Die Daten werden als statische Datei gespeichert.
 3. Die Website zeigt die zuletzt gespeicherte Tabelle.
-4. Falls der Import fehlschlaegt, bleibt die alte Tabelle sichtbar.
+4. Falls der Import fehlschlägt, bleibt die alte Tabelle sichtbar.
 
 ## Datenschutzregeln
 
 - Keine externen Google Fonts
 - Keine Instagram- oder Facebook-Embeds
 - Keine Analyse-Tools
-- Kontakt zunaechst per E-Mail-Link statt Formular
+- Kontakt zunächst per E-Mail-Link statt Formular
 - Fotos nur mit Einwilligung der abgebildeten Personen
-- Impressum und Datenschutzerklaerung vor Onlinegang ergaenzen
+- Impressum und Datenschutzerklärung vor Onlinegang ergänzen
 
 ## Offene Punkte
 
@@ -73,6 +73,6 @@ Bevorzugter technischer Weg:
 - echte Instagram-URL
 - echte Facebook-URL
 - offizielle SVV-/Landesliga-Links
-- Vereinsname fuer Impressum
+- Vereinsname für Impressum
 - Kontaktadresse
 - Domainauswahl `.at` oder `.com`

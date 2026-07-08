@@ -1,6 +1,6 @@
 ﻿# Black Wolves Website
 
-Statische Website fuer die Black Wolves Volleyballmannschaft aus Salzburg.
+Statische Website für die Black Wolves Volleyballmannschaft aus Salzburg.
 
 ## Dateien
 
@@ -10,7 +10,7 @@ Statische Website fuer die Black Wolves Volleyballmannschaft aus Salzburg.
 
 ## Hosting-Ziel
 
-Die Seite ist fuer GitHub Pages vorbereitet. Eine eigene Domain (.at oder .com) wird spaeter verbunden.
+Die Seite ist für GitHub Pages vorbereitet. Eine eigene Domain (.at oder .com) wird später verbunden.
 
 ## Datenschutz-Startregeln
 
