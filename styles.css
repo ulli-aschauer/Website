@@ -140,7 +140,7 @@ a { color: inherit; }
   position: absolute;
   z-index: 1;
   left: 51%;
-  top: 27%;
+  top: 26%;
   width: 16%;
   aspect-ratio: 1 / 1;
   transform: translate(-50%, -50%);
@@ -326,7 +326,7 @@ tr.highlight td { background: rgba(240, 20, 54, 0.24); font-weight: 900; }
   .split-layout, .league-layout, .training-groups { grid-template-columns: 1fr; }
   .info-grid, .link-grid, .photo-strip { grid-template-columns: 1fr; }
   .site-footer { flex-direction: column; }
-  .hero-logo { top: 18%; width: 18%; }
+  .hero-logo { top: 16%; width: 18%; }
 }
 
 
