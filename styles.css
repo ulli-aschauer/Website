@@ -283,7 +283,8 @@ th { color: var(--muted); font-size: 0.8rem; text-transform: uppercase; }
 tr.highlight td { background: rgba(240, 20, 54, 0.24); font-weight: 900; }
 .text-link { font-weight: 900; text-decoration-color: var(--red); text-decoration-thickness: 2px; text-underline-offset: 4px; }
 .link-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
-.contact-section .link-grid { max-width: 400px; margin-top: 20px; }
+.contact-section { text-align: center; }
+.contact-section .link-grid { max-width: 400px; margin-top: 20px; margin-inline: auto; }
 .link-grid a {
   display: flex;
   align-items: center;
