@@ -140,8 +140,8 @@ a { color: inherit; }
   position: absolute;
   z-index: 1;
   left: 51%;
-  top: 27%;
-  width: 15%;
+  top: 14.5%;
+  width: 16%;
   aspect-ratio: 1 / 1;
   transform: translate(-50%, -50%);
   border-radius: 50%;
