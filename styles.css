@@ -157,7 +157,8 @@ a { color: inherit; }
   margin: 0;
   padding: 0 20px 30px;
   color: var(--white);
-  font-family: "MedievalSharp", "Arial", sans-serif;
+  font-family: "Anton", "Arial Narrow", sans-serif;
+  font-style: italic;
   font-size: clamp(2.3rem, 9vw, 3.6rem);
   line-height: 1;
   letter-spacing: 0.5em;
