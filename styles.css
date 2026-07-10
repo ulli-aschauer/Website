@@ -326,7 +326,7 @@ tr.highlight td { background: rgba(240, 20, 54, 0.24); font-weight: 900; }
   .split-layout, .league-layout, .training-groups { grid-template-columns: 1fr; }
   .info-grid, .link-grid, .photo-strip { grid-template-columns: 1fr; }
   .site-footer { flex-direction: column; }
-  .hero-logo { top: 10%; width: 13%; }
+  .hero-logo { top: 5%; width: 13%; }
 }
 
 
