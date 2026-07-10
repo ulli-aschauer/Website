@@ -70,3 +70,26 @@ if (nextMatchday) {
       // Bei Fehler bleiben die "Wird geladen..."-Platzhalter sichtbar.
     });
 }
+
+const gesuchtList = document.querySelector('#gesucht-list');
+
+if (gesuchtList) {
+  fetch('data/gesucht.json')
+    .then((response) => (response.ok ? response.json() : Promise.reject(response.status)))
+    .then((data) => {
+      const openings = Array.isArray(data.openings) ? data.openings : [];
+      if (!openings.length) {
+        gesuchtList.innerHTML = '<article class="info-card"><p>Aktuell suchen wir niemand Bestimmten - Interessierte sind trotzdem jederzeit willkommen, siehe Probetraining oben.</p></article>';
+        return;
+      }
+      gesuchtList.innerHTML = openings
+        .map((opening) => {
+          const title = [opening.role, opening.position].filter(Boolean).join(' - ');
+          return `<article class="info-card"><h3>${title}</h3><p>${opening.description ?? ''}</p></article>`;
+        })
+        .join('');
+    })
+    .catch(() => {
+      gesuchtList.innerHTML = '<article class="info-card"><p>Aktuell suchen wir niemand Bestimmten - Interessierte sind trotzdem jederzeit willkommen, siehe Probetraining oben.</p></article>';
+    });
+}
