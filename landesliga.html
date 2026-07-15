@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Naechster Spieltag und Tabelle der ASVOe Black Wolves - Salzburger Herren Landesliga.">
+  <meta name="robots" content="noindex">
+  <title>Landesliga - ASVÖ Black Wolves</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <p class="construction-banner">Ist im Aufbau</p>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Black Wolves Startseite">
+      <img class="brand-mark" src="assets/logo.png" alt="" aria-hidden="true">
+      <span>
+        <strong>Black Wolves</strong>
+        <small>Volleyball Salzburg</small>
+      </span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+      <span class="sr-only">Menü öffnen</span>
+    </button>
+    <nav id="main-nav" class="main-nav" aria-label="Hauptnavigation">
+      <a href="index.html#verein">Verein</a>
+      <a href="team.html">Team</a>
+      <a href="fotos.html">Fotos</a>
+      <a href="index.html#spieltag">Spieltag</a>
+      <a href="landesliga.html">Landesliga</a>
+      <a href="index.html#gesucht">Gesucht</a>
+      <a href="index.html#training">Training</a>
+      <a href="index.html#sponsoren">Sponsoren</a>
+      <a href="index.html#links">Links</a>
+      <a href="index.html#kontakt">Kontakt</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="content-section">
+      <div class="section-heading">
+        <p class="eyebrow">Termin</p>
+        <h2>Nächster Spieltag</h2>
+      </div>
+      <div class="info-grid" id="next-matchday">
+        <article class="info-card"><h3>Datum</h3><p data-field="date">Wird geladen...</p></article>
+        <article class="info-card"><h3>Gegner</h3><p data-field="opponent">Wird geladen...</p></article>
+        <article class="info-card"><h3>Ort</h3><p data-field="location">Wird geladen...</p></article>
+      </div>
+    </section>
+
+    <section class="content-section muted">
+      <div class="section-heading">
+        <p class="eyebrow">Landesliga</p>
+        <h2>Aktuelle Tabelle</h2>
+      </div>
+      <div class="league-layout">
+        <div class="table-wrap" role="region" aria-label="Landesligatabelle" tabindex="0">
+          <table>
+            <thead><tr><th>Pl.</th><th>Team</th><th>Sp.</th><th>S</th><th>N</th><th>Pkt.</th></tr></thead>
+            <tbody id="standings-body">
+              <tr class="highlight"><td>1</td><td>Black Wolves</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+              <tr><td>2</td><td>Team aus SVV eintragen</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+              <tr><td>3</td><td>Team aus SVV eintragen</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <aside class="league-note">
+          <h3>Datenquelle</h3>
+          <p>Die Tabelle wird automatisch aus der Volleystation-Wertung der Salzburger Herren Landesliga übernommen. Die Quell-URL wird zu Saisonbeginn aktualisiert.</p>
+          <a class="text-link" href="https://panel.volleystation.com/website/544/de/phase-3799-1llh-gd/standings/" rel="noopener" target="_blank">Tabelle auf Volleystation öffnen</a>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> ASVÖ Black Wolves</p>
+    <div><a href="index.html#top">Zur Startseite</a><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="assets/dokumente/statuten.pdf" target="_blank" rel="noopener">Statuten</a></div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
