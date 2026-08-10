@@ -249,6 +249,11 @@ h3 { margin: 0 0 10px; font-size: 1.15rem; }
   margin-top: 32px;
 }
 .photo-strip .photo-placeholder { min-height: 260px; }
+.gallery-heading {
+  font-size: 1.75rem;
+  margin-top: 32px;
+  padding-bottom: 18px;
+}
 .photo-grid {
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
 }
