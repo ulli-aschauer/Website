@@ -71,6 +71,29 @@ if (nextMatchday) {
     });
 }
 
+const newsList = document.querySelector('#news-list');
+
+if (newsList) {
+  fetch('data/news.json')
+    .then((response) => (response.ok ? response.json() : Promise.reject(response.status)))
+    .then((data) => {
+      const items = Array.isArray(data.items) ? data.items : [];
+      if (!items.length) {
+        newsList.innerHTML = '<article class="info-card"><p>Aktuell gibt es keine Neuigkeiten.</p></article>';
+        return;
+      }
+      newsList.innerHTML = items
+        .map((item) => {
+          const date = item.date ? new Date(item.date).toLocaleDateString('de-AT') : '';
+          return `<article class="info-card"><small>${date}</small><h3>${item.title ?? ''}</h3><p>${item.text ?? ''}</p></article>`;
+        })
+        .join('');
+    })
+    .catch(() => {
+      newsList.innerHTML = '<article class="info-card"><p>Aktuell gibt es keine Neuigkeiten.</p></article>';
+    });
+}
+
 const gesuchtList = document.querySelector('#gesucht-list');
 
 if (gesuchtList) {
