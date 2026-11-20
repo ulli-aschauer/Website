@@ -1,10 +1,79 @@
 {
-  "source": "https://panel.volleystation.com/website/544/de/phase-3799-1llh-gd/standings/",
-  "updatedAt": "2026-07-08T00:00:00Z",
-  "team": "Black Wolves",
+  "source": "https://svv.volleynet.at/Tabelle/39872",
+  "updatedAt": "2026-11-20T19:05:05.756Z",
+  "team": "ABW-Black Wolves",
   "rows": [
-    { "rank": 1, "team": "Black Wolves", "played": null, "wins": null, "losses": null, "points": null },
-    { "rank": 2, "team": "Team aus SVV eintragen", "played": null, "wins": null, "losses": null, "points": null },
-    { "rank": 3, "team": "Team aus SVV eintragen", "played": null, "wins": null, "losses": null, "points": null }
+    {
+      "rank": 1,
+      "team": "SV narrischguat Schwarzach",
+      "played": 4,
+      "wins": 3,
+      "losses": 1,
+      "points": 8
+    },
+    {
+      "rank": 2,
+      "team": "ATV Schladming",
+      "played": 2,
+      "wins": 2,
+      "losses": 0,
+      "points": 6
+    },
+    {
+      "rank": 3,
+      "team": "ABW-Black Wolves",
+      "played": 2,
+      "wins": 2,
+      "losses": 0,
+      "points": 6
+    },
+    {
+      "rank": 4,
+      "team": "VV Kampfhummeln",
+      "played": 4,
+      "wins": 1,
+      "losses": 3,
+      "points": 4
+    },
+    {
+      "rank": 5,
+      "team": "PSVBG Salzburg 1",
+      "played": 1,
+      "wins": 1,
+      "losses": 0,
+      "points": 3
+    },
+    {
+      "rank": 6,
+      "team": "Volleyball BG Tamsweg",
+      "played": 4,
+      "wins": 1,
+      "losses": 3,
+      "points": 3
+    },
+    {
+      "rank": 7,
+      "team": "SG TV Oberndorf/UVC Lamprechtshausen 2",
+      "played": 2,
+      "wins": 1,
+      "losses": 1,
+      "points": 2
+    },
+    {
+      "rank": 8,
+      "team": "PSVBG Salzburg 2",
+      "played": 3,
+      "wins": 0,
+      "losses": 3,
+      "points": 1
+    },
+    {
+      "rank": 9,
+      "team": "SG TV Oberndorf/UVC Lamprechtshausen 1",
+      "played": 0,
+      "wins": 0,
+      "losses": 0,
+      "points": 0
+    }
   ]
 }
