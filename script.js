@@ -63,9 +63,8 @@ if (nextMatchday) {
         opponentField.innerHTML = games.length
           ? games
               .map((game) => {
-                const awayHome = game.homeOrAway === 'heim' ? 'Heimspiel' : game.homeOrAway === 'auswärts' ? 'Auswärtsspiel' : '';
                 const time = game.time ? `${escapeHtml(game.time)} Uhr: ` : '';
-                return `${time}${escapeHtml(game.opponent)}${awayHome ? ` (${awayHome})` : ''}`;
+                return `${time}${escapeHtml(game.opponent)}`;
               })
               .join('<br>')
           : 'Steht noch nicht fest';
