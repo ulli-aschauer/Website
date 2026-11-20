@@ -1,8 +1,17 @@
-name: Tabelle und Spieltag aktualisieren
+name: Tabelle, Spieltag und Flyer aktualisieren
 
 on:
   schedule:
     - cron: '17 5 * * *'   # einmal täglich (ca. 7 Uhr)
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/make-flyers.mjs'
+      - 'scripts/flyer-html.cjs'
+      - 'data/hallen-info.json'
+      - 'data/spieltag-info.json'
+      - 'assets/posts/**'
+      - 'assets/logos/**'
   workflow_dispatch:
 
 permissions:
@@ -17,9 +26,14 @@ jobs:
         with:
           node-version: 22
       - run: node scripts/update-data.mjs
+      - run: npm install --no-save --no-audit --no-fund puppeteer-core
+      - name: Flyer erzeugen
+        run: node scripts/make-flyers.mjs
+        env:
+          CHROME_PATH: /usr/bin/google-chrome
       - name: Änderungen committen
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/standings.json data/next-matchday.json
-          git diff --cached --quiet || (git commit -m "Tabelle/Spieltag aktualisiert (SVV)" && git push)
+          git add data/standings.json data/next-matchday.json assets/flyers
+          git diff --cached --quiet || (git commit -m "Tabelle, Spieltag und Flyer aktualisiert" && git pull --rebase -q && git push)
