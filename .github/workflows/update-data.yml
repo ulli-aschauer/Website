@@ -2,7 +2,7 @@ name: Tabelle und Spieltag aktualisieren
 
 on:
   schedule:
-    - cron: '17 */3 * * *'   # alle 3 Stunden
+    - cron: '17 5 * * *'   # einmal täglich (ca. 7 Uhr)
   workflow_dispatch:
 
 permissions:

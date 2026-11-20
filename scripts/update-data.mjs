@@ -48,6 +48,8 @@ async function updateStandings() {
 }
 
 async function updateNextMatchday() {
+  // Hallen-Bezeichnung des SVV -> Adresse (data/hallen.json, aus dem Tab "Hallen" im Sheet)
+  const hallen = JSON.parse(await readFile('data/hallen.json', 'utf8'));
   const [termine, ergebnisse] = await Promise.all([loadText('Termine'), loadText('Ergebnisse')]);
   const played = new Set([...ergebnisse.matchAll(/(SVV - [^|]+)\|\d\d\.\d\d\.\d{4}\|/g)].map((m) => m[1]));
   const gamePattern = /\d+\|(SVV - [^|]+)\|\w\w\|(\d\d\.\d\d\.\d{4})\|(\d\d:\d\d)\|([^|]+)\|([^|]+)\|([^|]+)\|Google\|/g;
@@ -63,9 +65,12 @@ async function updateNextMatchday() {
     .map((g) => ({
       time: g.time,
       opponent: g.home === OWN_TEAM ? g.away : g.home,
-      location: g.hall,
+      location: hallen[g.hall] ?? g.hall,
       homeOrAway: g.home === OWN_TEAM ? 'heim' : 'auswärts',
     }));
+  for (const g of games.filter((x) => x.date === games[0]?.date)) {
+    if (!hallen[g.hall]) console.warn(`WARNUNG: keine Adresse für Halle "${g.hall}" in data/hallen.json`);
+  }
   const first = matchday[0];
   const data = {
     source: `${BASE}/Termine/${BEWERB}`,
