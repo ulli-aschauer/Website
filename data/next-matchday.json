@@ -1,7 +1,21 @@
 {
   "source": "https://svv.volleynet.at/Termine/39872",
-  "updatedAt": "2026-11-20T19:05:08.127Z",
+  "updatedAt": "2026-11-20T19:10:42.542Z",
   "date": "28.11.2026",
+  "games": [
+    {
+      "time": "14:00",
+      "opponent": "SV narrischguat Schwarzach",
+      "location": "SH {SCHWARZACH/PONGAU}",
+      "homeOrAway": "auswärts"
+    },
+    {
+      "time": "16:00",
+      "opponent": "PSVBG Salzburg 1",
+      "location": "SH {SCHWARZACH/PONGAU}",
+      "homeOrAway": "heim"
+    }
+  ],
   "time": "14:00",
   "opponent": "SV narrischguat Schwarzach",
   "location": "SH {SCHWARZACH/PONGAU}",

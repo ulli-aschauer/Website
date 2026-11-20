@@ -2,19 +2,18 @@
 // Aufruf: node scripts/update-data.mjs   (Node 18+, keine Abhängigkeiten)
 import { readFile, writeFile } from 'node:fs/promises';
 
+const BEWERB = '39872'; // SVV - 1LLH - Grunddurchgang 2026/2027
+const OWN_TEAM = 'ABW-Black Wolves';
+const BASE = 'https://svv.volleynet.at';
+
 // Schreibt nur, wenn sich die Daten (ohne Zeitstempel) geändert haben.
 async function writeIfChanged(path, data) {
   const strip = (value) => JSON.stringify({ ...value, updatedAt: undefined });
   const current = await readFile(path, 'utf8').then(JSON.parse).catch(() => null);
   if (current && strip(current) === strip(data)) return false;
-  await writeFile(path, `${JSON.stringify(data, null, 2)}
-`);
+  await writeFile(path, `${JSON.stringify(data, null, 2)}\n`);
   return true;
 }
-
-const BEWERB = '39872'; // SVV - 1LLH - Grunddurchgang 2026/2027
-const OWN_TEAM = 'ABW-Black Wolves';
-const BASE = 'https://svv.volleynet.at';
 
 async function loadText(page) {
   const response = await fetch(`${BASE}/${page}/${BEWERB}`, { headers: { 'User-Agent': 'BlackWolvesSiteBot/1.0' } });
@@ -43,14 +42,9 @@ async function updateStandings() {
     rows.push({ rank: num(match[1]), team: match[2], played: num(match[3]), wins: num(match[4]), losses: num(match[5]), points: num(match[6]) });
   }
   if (rows.length < 2) throw new Error('Tabelle: keine Zeilen gefunden');
-  const data = {
-    source: `${BASE}/Tabelle/${BEWERB}`,
-    updatedAt: new Date().toISOString(),
-    team: OWN_TEAM,
-    rows,
-  };
-  await writeFile('data/standings.json', `${JSON.stringify(data, null, 2)}\n`);
-  console.log(`Tabelle: ${rows.length} Teams`);
+  const data = { source: `${BASE}/Tabelle/${BEWERB}`, updatedAt: new Date().toISOString(), team: OWN_TEAM, rows };
+  const changed = await writeIfChanged('data/standings.json', data);
+  console.log(`Tabelle: ${rows.length} Teams${changed ? ' (geändert)' : ''}`);
 }
 
 async function updateNextMatchday() {
@@ -63,18 +57,29 @@ async function updateNextMatchday() {
     .filter((g) => (g.home === OWN_TEAM || g.away === OWN_TEAM) && !played.has(g.id) && isoDate(g.date) >= today)
     .sort((a, b) => `${isoDate(a.date)} ${a.time}`.localeCompare(`${isoDate(b.date)} ${b.time}`));
 
-  const next = games[0];
+  // Ein Spieltag hat zwei Spiele: alle Spiele des nächsten Spieltags (gleiches Datum) übernehmen.
+  const matchday = games
+    .filter((g) => g.date === games[0].date)
+    .map((g) => ({
+      time: g.time,
+      opponent: g.home === OWN_TEAM ? g.away : g.home,
+      location: g.hall,
+      homeOrAway: g.home === OWN_TEAM ? 'heim' : 'auswärts',
+    }));
+  const first = matchday[0];
   const data = {
     source: `${BASE}/Termine/${BEWERB}`,
     updatedAt: new Date().toISOString(),
-    date: next ? next.date : null,
-    time: next ? next.time : null,
-    opponent: next ? (next.home === OWN_TEAM ? next.away : next.home) : null,
-    location: next ? next.hall : null,
-    homeOrAway: next ? (next.home === OWN_TEAM ? 'heim' : 'auswärts') : null,
+    date: first ? games[0].date : null,
+    games: matchday,
+    // Felder des ersten Spiels bleiben für ältere Auswertungen erhalten
+    time: first?.time ?? null,
+    opponent: first?.opponent ?? null,
+    location: first?.location ?? null,
+    homeOrAway: first?.homeOrAway ?? null,
   };
-  await writeFile('data/next-matchday.json', `${JSON.stringify(data, null, 2)}\n`);
-  console.log('Nächstes Spiel:', next ? `${next.date} ${next.time} ${data.opponent}` : 'keins');
+  const changed = await writeIfChanged('data/next-matchday.json', data);
+  console.log(`Nächster Spieltag${changed ? ' (geändert)' : ''}:`, data.date ?? 'keiner', matchday.map((g) => `${g.time} ${g.opponent}`).join(' | '));
 }
 
 await updateStandings();

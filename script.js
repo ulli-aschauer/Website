@@ -51,19 +51,28 @@ if (nextMatchday) {
       const opponentField = nextMatchday.querySelector('[data-field="opponent"]');
       const locationField = nextMatchday.querySelector('[data-field="location"]');
 
+      const games = Array.isArray(data.games) && data.games.length
+        ? data.games
+        : data.opponent ? [{ time: data.time, opponent: data.opponent, location: data.location, homeOrAway: data.homeOrAway }] : [];
+      const escapeHtml = (value) => String(value).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
       if (dateField) {
-        dateField.textContent = data.date
-          ? `${data.date}${data.time ? `, ${data.time} Uhr` : ''}`
-          : 'Steht noch nicht fest';
+        dateField.textContent = data.date || 'Steht noch nicht fest';
       }
       if (opponentField) {
-        const awayHome = data.homeOrAway === 'heim' ? 'Heimspiel' : data.homeOrAway === 'auswärts' ? 'Auswärtsspiel' : '';
-        opponentField.textContent = data.opponent
-          ? `${data.opponent}${awayHome ? ` (${awayHome})` : ''}`
+        opponentField.innerHTML = games.length
+          ? games
+              .map((game) => {
+                const awayHome = game.homeOrAway === 'heim' ? 'Heimspiel' : game.homeOrAway === 'auswärts' ? 'Auswärtsspiel' : '';
+                const time = game.time ? `${escapeHtml(game.time)} Uhr: ` : '';
+                return `${time}${escapeHtml(game.opponent)}${awayHome ? ` (${awayHome})` : ''}`;
+              })
+              .join('<br>')
           : 'Steht noch nicht fest';
       }
       if (locationField) {
-        locationField.textContent = data.location || 'Steht noch nicht fest';
+        const places = [...new Set(games.map((game) => game.location).filter(Boolean))];
+        locationField.innerHTML = places.length ? places.map(escapeHtml).join('<br>') : 'Steht noch nicht fest';
       }
     })
     .catch(() => {
