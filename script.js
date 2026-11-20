@@ -21,7 +21,7 @@ navLinks.forEach((link) => {
 const standingsBody = document.querySelector('#standings-body');
 
 if (standingsBody) {
-  fetch('data/standings.json')
+  fetch('data/standings.json', { cache: 'no-cache' })
     .then((response) => (response.ok ? response.json() : Promise.reject(response.status)))
     .then((data) => {
       const rows = Array.isArray(data.rows) ? data.rows : [];
@@ -44,7 +44,7 @@ if (standingsBody) {
 const nextMatchday = document.querySelector('#next-matchday');
 
 if (nextMatchday) {
-  fetch('data/next-matchday.json')
+  fetch('data/next-matchday.json', { cache: 'no-cache' })
     .then((response) => (response.ok ? response.json() : Promise.reject(response.status)))
     .then((data) => {
       const dateField = nextMatchday.querySelector('[data-field="date"]');
@@ -74,7 +74,7 @@ if (nextMatchday) {
 const newsList = document.querySelector('#news-list');
 
 if (newsList) {
-  fetch('data/news.json')
+  fetch('data/news.json', { cache: 'no-cache' })
     .then((response) => (response.ok ? response.json() : Promise.reject(response.status)))
     .then((data) => {
       const items = Array.isArray(data.items) ? data.items : [];
@@ -97,7 +97,7 @@ if (newsList) {
 const gesuchtList = document.querySelector('#gesucht-list');
 
 if (gesuchtList) {
-  fetch('data/gesucht.json')
+  fetch('data/gesucht.json', { cache: 'no-cache' })
     .then((response) => (response.ok ? response.json() : Promise.reject(response.status)))
     .then((data) => {
       const openings = Array.isArray(data.openings) ? data.openings : [];
