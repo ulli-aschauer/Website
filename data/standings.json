@@ -1,6 +1,6 @@
 {
   "source": "https://svv.volleynet.at/Tabelle/39872",
-  "updatedAt": "2026-11-20T19:10:18.646Z",
+  "updatedAt": "2026-11-22T13:25:59.081Z",
   "team": "ABW-Black Wolves",
   "rows": [
     {
@@ -14,9 +14,9 @@
     {
       "rank": 2,
       "team": "ATV Schladming",
-      "played": 2,
-      "wins": 2,
-      "losses": 0,
+      "played": 4,
+      "wins": 3,
+      "losses": 1,
       "points": 6
     },
     {
@@ -37,7 +37,7 @@
     },
     {
       "rank": 5,
-      "team": "PSVBG Salzburg 1",
+      "team": "SG TV Oberndorf/UVC Lamprechtshausen 1",
       "played": 1,
       "wins": 1,
       "losses": 0,
@@ -45,6 +45,14 @@
     },
     {
       "rank": 6,
+      "team": "PSVBG Salzburg 1",
+      "played": 2,
+      "wins": 1,
+      "losses": 1,
+      "points": 3
+    },
+    {
+      "rank": 7,
       "team": "Volleyball BG Tamsweg",
       "played": 4,
       "wins": 1,
@@ -52,7 +60,7 @@
       "points": 3
     },
     {
-      "rank": 7,
+      "rank": 8,
       "team": "SG TV Oberndorf/UVC Lamprechtshausen 2",
       "played": 2,
       "wins": 1,
@@ -60,20 +68,12 @@
       "points": 2
     },
     {
-      "rank": 8,
+      "rank": 9,
       "team": "PSVBG Salzburg 2",
       "played": 3,
       "wins": 0,
       "losses": 3,
       "points": 1
-    },
-    {
-      "rank": 9,
-      "team": "SG TV Oberndorf/UVC Lamprechtshausen 1",
-      "played": 0,
-      "wins": 0,
-      "losses": 0,
-      "points": 0
     }
   ]
 }
