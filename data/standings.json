@@ -1,23 +1,23 @@
 {
   "source": "https://svv.volleynet.at/Tabelle/39872",
-  "updatedAt": "2026-11-22T13:25:59.081Z",
+  "updatedAt": "2026-11-23T16:06:26.517Z",
   "team": "ABW-Black Wolves",
   "rows": [
     {
       "rank": 1,
+      "team": "ATV Schladming",
+      "played": 4,
+      "wins": 3,
+      "losses": 1,
+      "points": 9
+    },
+    {
+      "rank": 2,
       "team": "SV narrischguat Schwarzach",
       "played": 4,
       "wins": 3,
       "losses": 1,
       "points": 8
-    },
-    {
-      "rank": 2,
-      "team": "ATV Schladming",
-      "played": 4,
-      "wins": 3,
-      "losses": 1,
-      "points": 6
     },
     {
       "rank": 3,
@@ -29,6 +29,14 @@
     },
     {
       "rank": 4,
+      "team": "SG TV Oberndorf/UVC Lamprechtshausen 1",
+      "played": 2,
+      "wins": 2,
+      "losses": 0,
+      "points": 6
+    },
+    {
+      "rank": 5,
       "team": "VV Kampfhummeln",
       "played": 4,
       "wins": 1,
@@ -36,19 +44,11 @@
       "points": 4
     },
     {
-      "rank": 5,
-      "team": "SG TV Oberndorf/UVC Lamprechtshausen 1",
-      "played": 1,
-      "wins": 1,
-      "losses": 0,
-      "points": 3
-    },
-    {
       "rank": 6,
       "team": "PSVBG Salzburg 1",
-      "played": 2,
+      "played": 3,
       "wins": 1,
-      "losses": 1,
+      "losses": 2,
       "points": 3
     },
     {
